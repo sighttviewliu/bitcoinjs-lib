@@ -399,7 +399,7 @@ function build (type, input, allowIncomplete) {
         signatures = signatures.filter(x => x)
       }
 
-      return payments.p2ms({ signatures }, { allowIncomplete })
+      return payments.p2ms({ signatures }, { allowIncomplete, validate: true })
     }
     case SCRIPT_TYPES.P2SH: {
       const redeem = build(input.redeemScriptType, input, allowIncomplete)
